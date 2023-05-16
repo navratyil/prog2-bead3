@@ -19,13 +19,12 @@ using namespace std;
 const int X=800;
 const int Y=800;
 
-void mezo_ertek();
+//void mezo_ertek();
 
 
 struct MyAblak : public Ablak
 {
     FunktorButton * bu1;
-//    Hatter * hatter;
     vector<Counter*> mezok;
     Counter* mezo;
     StaticText* stabil;
@@ -84,7 +83,7 @@ struct MyAblak : public Ablak
             bf.open("medium.txt");
             break;
         case 2:
-            bf.open("medium.txt");
+            bf.open("hard.txt");
             break;
         }
 

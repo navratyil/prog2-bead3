@@ -13,6 +13,6 @@ void JatekMester::setter(vector<int> a)
 
 void JatekMester::ellenoriz()
 {
-     if(_allas[0]==4 && _allas[1]==2) cout << "samug ";
+     if(_allas[0]==4 && _allas[1]==2) cout << "jo";
 }
 
