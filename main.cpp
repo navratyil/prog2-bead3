@@ -5,7 +5,6 @@
 #include "button.hpp"
 #include "static.hpp"
 #include "ablak.hpp"
-#include "hatter.hpp"
 #include "jatekmester.hpp"
 
 #include <vector>
