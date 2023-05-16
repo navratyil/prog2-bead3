@@ -58,9 +58,6 @@ struct MyAblak : public Ablak
         }
         mester.setter(allas);
         mester.ellenoriz();
-        //cica
-        //kutya
-        //macska
     }
 
     void jatek(vector<int>& allas)
