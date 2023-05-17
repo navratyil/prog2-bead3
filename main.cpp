@@ -30,6 +30,7 @@ struct MyAblak : public Ablak
     StaticText* stabil;
     Menu* nehezseg;
     vector<int> allas;
+    vector<int> megoldas;
     JatekMester mester;
 
     vector<string> v;
@@ -37,7 +38,7 @@ struct MyAblak : public Ablak
     MyAblak() : Ablak(X,Y)
     {
 
-        bu1 = new FunktorButton(this,X/2-100,Y/2-100,200,70, "Play",[&](){jatek(allas);});
+        bu1 = new FunktorButton(this,X/2-100,Y/2-100,200,70, "Play",[&](){jatek(allas, megoldas);});
 
         v.push_back("konnyu");
         v.push_back("kozepes");
@@ -54,11 +55,11 @@ struct MyAblak : public Ablak
             allas[i]=p->number();
             i++;
         }
-        mester.setter(allas);
+        mester.setter(allas, megoldas);
         mester.ellenoriz();
     }
 
-    void jatek(vector<int>& allas)
+    void jatek(vector<int>& allas, vector<int>& megoldas)
     {
         if(nehezseg->the_chosen_one()!=-1){
 //        cout << 1;
@@ -105,8 +106,14 @@ struct MyAblak : public Ablak
 //            cout << allas[i-1];
         }
 
+        for(int i=0; i<81; i++)
+        {
+            bf >> a;
+            megoldas.push_back(a);
+        }
+
         bf.close();
-        mester.setter(allas);
+        mester.setter(allas, megoldas);
     }}
 
 

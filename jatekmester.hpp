@@ -8,10 +8,11 @@ class JatekMester{
 protected:
 
 std::vector<int> _allas;
+std::vector<int> _megoldas;
 
 public:
 
-    void setter(std::vector<int> a);
+    void setter(std::vector<int> puzzle, std::vector<int> solution);
     void ellenoriz();
 
 };
