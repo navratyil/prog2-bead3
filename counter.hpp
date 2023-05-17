@@ -12,11 +12,12 @@ protected:
     int _mx;
     int _szam;
     std::function<void()> _f;
+    int _r,_g,_b;
 public:
     Counter(Ablak *a, int x, int y, int sx, int sy, int mn, int mx,std::function<void()> f) :
         Widget(a,x,y,sx,sy), _mn(mn), _mx(mx), _f(f)
         {
-            //_allithato=false;
+            _r=255;_g=255;_b=153;
             if(mx>=0 && mn<=0){
                 _szam=0;
             }else{
@@ -28,6 +29,7 @@ public:
     virtual void szam_allitas(genv::event ev);
     virtual int number();
     virtual void setter(int a);
+    virtual void colorsetter(bool szin);
     virtual int lambda()
     {
         _f();

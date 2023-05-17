@@ -9,6 +9,7 @@ void Counter::rajzol()
 {
     gout << font("LiberationSans-Regular.ttf", _sy/2);
 
+
     gout << move_to(_x, _y) << color(255,255,255) << box(_sx, _sy);
     gout << move_to(_x+2, _y+2) << color(102, 153, 255) << box(_sx-4, _sy-4);
 
@@ -24,7 +25,7 @@ void Counter::rajzol()
          << line(10,0);
 
     gout << move_to(_x+_sx/2-gout.twidth(std::to_string(_szam))/2,_y+_sy/2-gout.cascent()/2-gout.cdescent()/2)
-         << color(255, 255, 153) << text(std::to_string(_szam));
+         << color(_r, _g, _b) << text(std::to_string(_szam));
 }
 
 void Counter::handle(event ev)
@@ -83,4 +84,12 @@ int Counter::number()
 void Counter::setter(int a)
 {
     _szam=a;
+}
+
+void Counter::colorsetter(bool szin)
+{
+    _r=255;_g=255;_b=153;
+    if(!szin){
+        _r=255;_g=0;_b=0;
+    }
 }

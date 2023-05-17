@@ -2,6 +2,7 @@
 #include "graphics.hpp"
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace genv;
 using namespace std;
@@ -12,13 +13,27 @@ void JatekMester::setter(vector<int> puzzle, vector<int> solution)
     _megoldas=solution;
 }
 
-void JatekMester::ellenoriz()
+bool JatekMester::ellenoriz()
 {
-    int helyes=0;
-    for(int i=0;i<9;i++)
+    bool helyes=true;
+    for(int i=0;i<81;i++)
     {
-        if(_allas[i]==_megoldas[i] && _allas[8]!=0) helyes++;
+        if(_allas[i]!=0){
+            int egyezes=0;
+
+            for(int j=0;j<9;j++){
+                if(_allas[j]==3) egyezes++;
+            }
+
+            if(egyezes!=0){
+                helyes=false;
+            }
+
+        }
+
     }
-    if(helyes==9) cout << "ugyes";
+    //if(helyes==9) cout << "ugyes";
+
+    return helyes;
 }
 

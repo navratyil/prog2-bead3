@@ -13,7 +13,7 @@ std::vector<int> _megoldas;
 public:
 
     void setter(std::vector<int> puzzle, std::vector<int> solution);
-    void ellenoriz();
+    bool ellenoriz();
 
 };
 

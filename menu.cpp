@@ -64,5 +64,7 @@ void Menu::handle(event ev)
 
 int Menu::the_chosen_one()
 {
+       std::cout << _kivalasztott_hely;
     return _kivalasztott_hely;
+
 }
