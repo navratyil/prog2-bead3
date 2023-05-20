@@ -10,6 +10,7 @@ protected:
     Ablak *_a;
     int _x, _y, _sx, _sy;
 public:
+    std::string type;
     Widget(Ablak *a, int x, int y, int sx, int sy);
     virtual bool fokuszban(int ex, int ey);
     virtual void rajzol()=0;

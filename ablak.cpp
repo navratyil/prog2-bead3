@@ -32,21 +32,22 @@ void Ablak::event_loop()
             }
         }
 
+        gout << move_to(0,0) << color(102, 135, 189) << box(800,800);
+
         if(fokuszban>=0){
             w[fokuszban]->handle(ev);
 
         }
 
-        gout << move_to(0,0) << color(102, 135, 189) << box(800,800);
-
-
         for(Widget* v:w){
-            v->rajzol();
+             v->rajzol();
         }
 
         //mester.handle();
 
         gout << refresh;
+
+        cout << gamestate;
 
     }
 }

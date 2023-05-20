@@ -12,12 +12,13 @@ protected:
 public:
 
     Button(Ablak* a, int x, int y, int sx, int sy, std::string text) :
-        Widget(a,x,y,sx,sy), _text(text){};
+        Widget(a,x,y,sx,sy), _text(text){    type = "gomb";};
 
     virtual void rajzol();
     virtual void handle(genv::event ev);
     virtual bool megnyomva();
     virtual void akcio()=0;
+
     //std::string getter();
 };
 

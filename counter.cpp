@@ -25,7 +25,9 @@ void Counter::rajzol()
          << line(10,0);
 
     gout << move_to(_x+_sx/2-gout.twidth(std::to_string(_szam))/2,_y+_sy/2-gout.cascent()/2-gout.cdescent()/2)
-         << color(_r, _g, _b) << text(std::to_string(_szam));
+         << color(_r, _g, _b);
+
+    if(_szam!=0) gout << text(std::to_string(_szam));
 }
 
 void Counter::handle(event ev)

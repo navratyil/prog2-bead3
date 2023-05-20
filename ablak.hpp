@@ -16,6 +16,7 @@ protected:
     int XX=800;
     int YY=1200;
 public:
+    int gamestate=0;
     JatekMester mester;
     Ablak(int XX, int YY);
     virtual ~Ablak(){}

@@ -33,7 +33,6 @@ struct MyAblak : public Ablak
     vector<int> megoldas;
     JatekMester mester;
     vector<string> v;
-    bool helyes=true;
 
     MyAblak() : Ablak(X,Y)
     {
@@ -49,15 +48,27 @@ struct MyAblak : public Ablak
 
     void mezo_ertek()
     {
+        vector<bool> hibak;
         int i=0;
         for(Counter *p : mezok)
         {
             allas[i]=p->number();
             i++;
-            p->colorsetter(helyes);
         }
         mester.setter(allas, megoldas);
-        helyes=mester.ellenoriz();
+        hibak=mester.ellenoriz();
+
+//        for(bool i : hibak)
+//        {
+//            cout << i << ' ';
+//        }
+
+        i=0;
+        for(Counter *p : mezok)
+        {
+            p->colorsetter(hibak[i]==true);
+            i++;
+        }
     }
 
     void jatek(vector<int>& allas, vector<int>& megoldas)
@@ -115,7 +126,8 @@ struct MyAblak : public Ablak
 
         bf.close();
         mester.setter(allas, megoldas);
-        for(int i : allas) cout << i << ' ';
+        gamestate=1;
+        //for(int i : allas) cout << i << ' ';
     }}
 
 

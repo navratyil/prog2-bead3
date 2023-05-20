@@ -23,6 +23,7 @@ public:
             }else{
                 _szam=(mn+mx)/2;
             }
+                type = "szamlalo";
         };
     virtual void rajzol() ;
     virtual void handle(genv::event ev);
@@ -34,6 +35,7 @@ public:
     {
         _f();
     };
+
 };
 
 
