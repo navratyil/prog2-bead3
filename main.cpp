@@ -12,6 +12,7 @@
 #include <fstream>
 #include <string>
 #include <functional>
+#include <unistd.h>
 
 using namespace std;
 //using namespace genv;
@@ -33,6 +34,7 @@ struct MyAblak : public Ablak
     vector<int> megoldas;
     JatekMester mester;
     vector<string> v;
+    bool vege=false;
 
     MyAblak() : Ablak(X,Y)
     {
@@ -43,7 +45,7 @@ struct MyAblak : public Ablak
         v.push_back("kozepes");
         v.push_back("nehez");
 
-        nehezseg = new Menu(this, X/2-100,Y/2,200,40, v);
+        nehezseg = new Menu(this,X/2-100,Y/2,200,40, v);
     }
 
     void mezo_ertek()
@@ -55,6 +57,7 @@ struct MyAblak : public Ablak
             allas[i]=p->number();
             i++;
         }
+
         mester.setter(allas, megoldas);
         hibak=mester.ellenoriz();
 
@@ -69,6 +72,12 @@ struct MyAblak : public Ablak
             p->colorsetter(hibak[i]==true);
             i++;
         }
+
+        if(vege){
+            gamestate=2;
+        }
+
+        if(allas==megoldas) vege=true;
     }
 
     void jatek(vector<int>& allas, vector<int>& megoldas)

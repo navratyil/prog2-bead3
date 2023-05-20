@@ -25,6 +25,7 @@ public:
             _kivalasztott=-1;
             _felette=-1;
             _felso=0;
+            type="menu";
         };
 
     virtual void rajzol() ;
