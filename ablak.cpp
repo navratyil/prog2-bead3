@@ -57,15 +57,17 @@ void Ablak::event_loop()
 
         }
 
+//gameover
         if(gamestate==2){
             gout << move_to(0,0) << color(102, 135, 189) << box(800,800);
             sleep(1);
-            gout << move_to(400,400) << color(0,0,0) << text("nice");
+            gout << move_to(400,400) << color(0,0,0) << text("Game Over");
+            break;
         }
 
         gout << refresh;
 
-        cout << gamestate;
+//        cout << gamestate;
 
     }
 }

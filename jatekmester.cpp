@@ -75,6 +75,48 @@ vector<bool> JatekMester::ellenoriz()
         }
     }
 
+    for(int rsor=0; rsor<3; rsor++){
+        for(int roszlop=0; roszlop<3; roszlop++){
+            std::vector<bool> vizsgalt(10, false);
+
+            for(int sor=0; sor<3;sor++){
+                for(int oszlop=0;oszlop<3; oszlop++){
+                    int globalSor=rsor*3+sor;
+                    int globalOszlop=roszlop*3+oszlop;
+                    int szam=_allas[globalSor*9+globalOszlop];
+
+                    if(szam!=0){
+                        if(vizsgalt[szam]){
+                            hibak[globalSor*9+globalOszlop]=true;
+                        vizsgalt[szam] = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    for(int rsor=2; rsor>=0; rsor--){
+        for(int roszlop=2; roszlop>=0; roszlop--){
+            std::vector<bool> vizsgalt(10, false);
+
+            for(int sor=2; sor>=0;sor--){
+                for(int oszlop=2;oszlop>=0; oszlop--){
+                    int globalSor=rsor*3+sor;
+                    int globalOszlop=roszlop*3+oszlop;
+                    int szam=_allas[globalSor*9+globalOszlop];
+
+                    if(szam!=0){
+                        if(vizsgalt[szam]){
+                            hibak[globalSor*9+globalOszlop]=true;
+                        vizsgalt[szam] = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
 //    for(bool i : hibak)
 //    {
